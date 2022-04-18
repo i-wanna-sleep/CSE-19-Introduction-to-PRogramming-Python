@@ -1,0 +1,66 @@
+#our Student class
+class Student:
+    #our constructor
+    def __init__(self,first,last,gpa):
+        #to this class assigning
+        self.first=first
+        #to this class assigning
+        self.last=last
+        #to this class assigning
+        self.gpa=gpa
+  
+    #get get_gpa method
+    def get_gpa(self):
+        #return gpa
+        return self.gpa
+          
+    #get_first method
+    def get_first(self):
+        #return first name
+        return self.first
+  
+    #get_last method
+    def get_last(self):
+        #return last name
+        return self.last
+          
+
+
+#our Course class             
+class Course:
+    #our constructor
+    def __init__(self):
+        #creating roster list
+        self.roster =[]
+  
+    #add_student method            
+    def add_student(self,student):
+        #add the roster
+        self.roster.append(student)
+       
+    #course_size method              
+    def course_size(self):
+        #retur length of roster
+        return len(self.roster)
+  
+    #print_roster method
+    def print_roster(self):
+        #iterating through the roster
+        for i in range(len(self.roster)):
+            #printing firstname,lastname,gpa using get_first ,get_last,get_gpa methods of Students
+            print(self.roster[i].get_first(),self.roster[i].get_last(),self.roster[i].get_gpa())
+                              
+
+#our main function                               
+if __name__=="__main__":
+    #creating a course object
+    course = Course()
+   
+    #adding student object to course
+    course.add_student(Student('Henry', 'Bendel', 3.6))
+    #adding student object to course
+    course.add_student(Student('Johnny', 'Moin', 2.9))
+    #calling print_roster method
+  
+    #course.print_roster()
+    print('Course size:',course.course_size())
